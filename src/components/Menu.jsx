@@ -34,9 +34,9 @@ const Menu = () => {
             <img src="/images/slider-left-leaf.png" alt="left-leaf" id="m-left-leaf" />
             <img src="/images/slider-right-leaf.png" alt="left-leaf" id="m-right-leaf" />
 
-            <h2 id="menu-heading" className="sr-only"> Cocktail Menu</h2>
+            <h2 id="menu-heading" className="sr-only"> Perfume Collection</h2>
 
-            <nav className="cocktail-tabs" aria-label="cocktail-menu">
+            <nav className="cocktail-tabs" aria-label="perfume-menu">
                 {allCocktails.map((cocktail, index) => {
                     const isActive = index === currentIndex
                     return(
@@ -70,7 +70,7 @@ const Menu = () => {
 
                 <div className="recipe">
                     <div ref={contentRef} className="info">
-                        <p>Recipe for:</p>
+                        <p>Fragrance Profile:</p>
                         <p id="title">{currentCocktail.name}</p>
                     </div>
 

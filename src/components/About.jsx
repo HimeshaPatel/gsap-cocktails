@@ -34,12 +34,12 @@ const About = () => {
             <div className="mb-16 md:px-0 px-5">
                 <div className="content">
                     <div className="md:col-span-8">
-                        <p className="badge">Best Cocktails</p>
-                        <h2>Where every details matter <span className="text-white">-</span>from muddle to grnish</h2>
+                        <p className="badge">Best Perfumes</p>
+                        <h2>Where every details matter <span className="text-white"> - </span>from notes to bottle</h2>
                     </div>
                     <div className="sub-content">
                         <p>
-                            Every cocktail we serve is a reflection of our obsession with detail — from the first muddle to the final garnish. That care is what turns a simple drink into something truly memorable.
+                            Every perfume we create is a reflection of our obsession with detail — from the first drop of essence to the final bottle. That care is what turns a simple fragrance into something truly unforgettable.
                         </p>
                         <div>
                             <p className="md:text-3xl text-xl font-bold">

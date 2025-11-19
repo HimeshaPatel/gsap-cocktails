@@ -52,7 +52,7 @@ const Art = () => {
                     <div className="cocktail-img">
                         <img
                             src="/images/under-img.jpg"
-                            alt="cocktail"
+                            alt="perfume"
                             className="abs-center masked-img size-full object-contain"
                         />
                     </div>
@@ -68,10 +68,10 @@ const Art = () => {
                 </div>
 
                 <div className="masked-container">
-                    <h2 className="will-fade">Sip-Worthy Perfection</h2>
+                    <h2 className="will-fade">Scent-Worthy Perfection</h2>
                     <div id="masked-content" className="mt-5">
-                        <h3>Made with Craft, Poured with Passion</h3>
-                        <p>This isn’t just a drink. It’s a carefully crafted moment made just for you.</p>
+                        <h3>Made with Craft, Bottled with Passion</h3>
+                        <p>This isn't just a fragrance. It's a carefully crafted essence made just for you.</p>
                     </div>
                 </div>
             </div>

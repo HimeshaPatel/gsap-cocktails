@@ -86,16 +86,16 @@ const Hero = () => {
           <div className="body">
               <div className="content">
                   <div className="space-y-5 hidden md:block">
-                    <p>Cool. Crisp. Classic.</p>
+                    <p>Elegant. Luxurious. Timeless.</p>
                       <p className="subtitle">
-                          Sip the Spirit <br /> of Summer
+                          Discover the Essence <br /> of Luxury
                       </p>
                   </div>
                     <div className="view-cocktails">
                         <p className="subtitle">
-                            Every coktails on our menu is a blend of premium ingredientd, creative, flair, and timeless recieps - designed to delight your senses.
+                            Every perfume in our collection is a blend of premium ingredients, creative artistry, and timeless fragrances - designed to captivate your senses.
                         </p>
-                        <a href='#cocktails'>View Cocktails</a>
+                        <a href='#cocktails'>View Perfumes</a>
                     </div>
 
               </div>

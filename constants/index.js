@@ -1,7 +1,7 @@
 const navLinks = [
     {
         id: "cocktails",
-        title: "Cocktails",
+        title: "Perfumes",
     },
     {
         id: "about",
@@ -19,55 +19,55 @@ const navLinks = [
 
 const cocktailLists = [
     {
-        name: "Chapel Hill Shiraz",
-        country: "AU",
-        detail: "Battle",
-        price: "$10",
+        name: "Midnight Rose",
+        country: "FR",
+        detail: "50 ml",
+        price: "$89",
     },
     {
-        name: "Caten Malbee",
-        country: "AU",
-        detail: "Battle",
-        price: "$49",
+        name: "Ocean Breeze",
+        country: "IT",
+        detail: "100 ml",
+        price: "$129",
     },
     {
-        name: "Rhino Pale Ale",
-        country: "CA",
-        detail: "750 ml",
-        price: "$20",
+        name: "Vanilla Dreams",
+        country: "US",
+        detail: "75 ml",
+        price: "$79",
     },
     {
-        name: "Irish Guinness",
-        country: "IE",
-        detail: "600 ml",
-        price: "$29",
+        name: "Sandalwood Essence",
+        country: "IN",
+        detail: "50 ml",
+        price: "$99",
     },
 ];
 
 const mockTailLists = [
     {
-        name: "Tropical Bloom",
-        country: "US",
-        detail: "Battle",
-        price: "$10",
+        name: "Jasmine Garden",
+        country: "FR",
+        detail: "50 ml",
+        price: "$95",
     },
     {
-        name: "Passionfruit Mint",
-        country: "US",
-        detail: "Battle",
-        price: "$49",
+        name: "Bergamot Sunrise",
+        country: "IT",
+        detail: "100 ml",
+        price: "$115",
     },
     {
-        name: "Citrus Glow",
-        country: "CA",
-        detail: "750 ml",
-        price: "$20",
+        name: "Lily of the Valley",
+        country: "UK",
+        detail: "75 ml",
+        price: "$85",
     },
     {
-        name: "Lavender Fizz",
-        country: "IE",
-        detail: "600 ml",
-        price: "$29",
+        name: "Amber Mystique",
+        country: "FR",
+        detail: "50 ml",
+        price: "$105",
     },
 ];
 
@@ -87,17 +87,17 @@ const profileLists = [
 ];
 
 const featureLists = [
-    "Perfectly balanced blends",
-    "Garnished to perfection",
-    "Ice-cold every time",
-    "Expertly shaken & stirred",
+    "Perfectly balanced notes",
+    "Bottled to perfection",
+    "Long-lasting fragrance",
+    "Expertly crafted & blended",
 ];
 
 const goodLists = [
-    "Handpicked ingredients",
-    "Signature techniques",
-    "Bartending artistry in action",
-    "Freshly muddled flavors",
+    "Handpicked essences",
+    "Signature formulations",
+    "Perfumery artistry in action",
+    "Freshly extracted notes",
 ];
 
 const storeInfo = {
@@ -105,7 +105,7 @@ const storeInfo = {
     address: "456, Raq Blvd. #404, Los Angeles, CA 90210",
     contact: {
         phone: "(555) 987-6543",
-        email: "hello@jsmcocktail.com",
+        email: "hello@velvetpour.com",
     },
 };
 
@@ -137,35 +137,35 @@ const socials = [
 const allCocktails = [
     {
         id: 1,
-        name: "Classic Mojito",
+        name: "Midnight Rose",
         image: "/images/drink1.png",
-        title: "Simple Ingredients, Bold Flavor",
+        title: "Elegant Notes, Bold Character",
         description:
-            "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
+            "A sophisticated blend of dark rose, oud, and vanilla creates an intoxicating evening fragrance. Perfect for those who want to make a lasting impression with every spritz.",
     },
     {
         id: 2,
-        name: "Raspberry Mojito",
+        name: "Ocean Breeze",
         image: "/images/drink2.png",
-        title: "A Zesty Classic That Never Fails",
+        title: "A Fresh Classic That Never Fails",
         description:
-            "The Margarita is a classic that balances tangy lime, smooth tequila, and a touch of sweetness. Shaken, frozen, or on the rocks—it’s always crisp & refreshing.",
+            "This timeless fragrance balances crisp aquatic notes, citrus zest, and a hint of sea salt. Light, airy, and refreshing—it's always perfect for daytime elegance.",
     },
     {
         id: 3,
-        name: "Violet Breeze",
+        name: "Vanilla Dreams",
         image: "/images/drink3.png",
-        title: "Simple Ingredients, Bold Flavor",
+        title: "Warm Essence, Luxurious Feel",
         description:
-            "Made with tequila, lime juice, and orange liqueur, the Margarita is easy to make and full of character. Add a salted rim for the perfect drink on summer nights.",
+            "Crafted with Madagascar vanilla, creamy sandalwood, and amber, this fragrance is cozy and inviting. A comforting scent that wraps you in warmth and sophistication.",
     },
     {
         id: 4,
-        name: "Curacao Mojito",
+        name: "Sandalwood Essence",
         image: "/images/drink4.png",
-        title: "Crafted With Care, Poured With Love",
+        title: "Crafted With Care, Bottled With Love",
         description:
-            "Each cocktail is made with fresh ingredients and a passion for perfecting every pour, whether you're celebrating or simply relaxing.",
+            "Each perfume is made with premium essences and a passion for perfecting every blend, whether you're dressing up for a special occasion or simply enjoying everyday luxury.",
     },
 ];
 
