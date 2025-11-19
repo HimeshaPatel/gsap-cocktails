@@ -1,4 +1,4 @@
-import React, {useRef} from "react";
+import React, {useRef, useEffect, useMemo} from "react";
 import {useGSAP} from "@gsap/react";
 import {SplitText} from "gsap/all";
 import gsap from "gsap";
@@ -7,6 +7,16 @@ import {useMediaQuery} from "react-responsive";
 const Hero = () => {
 
     const videoRef = useRef();
+
+    // Generate a version string once to bypass browser cache
+    const videoVersion = useMemo(() => `v=${Date.now()}`, []);
+
+    // Force video reload to bypass cache
+    useEffect(() => {
+        if (videoRef.current) {
+            videoRef.current.load();
+        }
+    }, []);
 
     const isMobile = useMediaQuery({ maxWidth: 767 });
 
@@ -70,7 +80,7 @@ const Hero = () => {
     return (
       <>
       <section id="hero" className="noisy">
-          <h1 className="title">Mojito</h1>
+          <h1 className="title">Perfume</h1>
             <img src="/images/hero-left-leaf.png" alt="left-leaf" className="left-leaf"   />
             <img src="/images/hero-right-leaf.png" alt="right-leaf" className="right-leaf"   />
           <div className="body">
@@ -94,7 +104,7 @@ const Hero = () => {
           <div className="video absolute inset-0">
                 <video
                 ref={videoRef}
-                src="/videos/output.mp4"
+                src={`/videos/output.mp4?${videoVersion}`}
                 muted
                 playsInline
                 preload="auto"
