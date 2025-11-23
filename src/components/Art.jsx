@@ -31,13 +31,44 @@ const Art = () => {
             })
             .to('#masked-content', {opacity: 1, duration: 1, ease: 'power1.inOut'})
 
+        // Floating animation for left and right images
+        gsap.to('.floating-left-img', {
+            y: -30,
+            duration: 3,
+            ease: 'power1.inOut',
+            repeat: -1,
+            yoyo: true
+        })
+
+        gsap.to('.floating-right-img', {
+            y: -30,
+            duration: 3.5,
+            ease: 'power1.inOut',
+            repeat: -1,
+            yoyo: true,
+            delay: 0.5
+        })
 
     })
 
     return (
         <div id="art">
+            {/* Floating left image */}
+            <img 
+                src="/images/art-left.png" 
+                alt="floating left" 
+                className="floating-left-img"
+            />
+            
+            {/* Floating right image */}
+            <img 
+                src="/images/art-right.png" 
+                alt="floating right" 
+                className="floating-right-img"
+            />
+            
             <div className="container mx-auto h-full pt-20">
-                <h2 className="will-fade">The ART</h2>
+                <h2 className="will-fade z-10">The ART</h2>
 
                 <div className="content">
                     <ul className="space-y-4 will-fade">
