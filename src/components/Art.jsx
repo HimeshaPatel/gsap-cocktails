@@ -8,28 +8,39 @@ import {useGSAP} from "@gsap/react";
 const Art = () => {
 
     const isMobile = useMediaQuery({ maxWidth: 767 });
+    const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
     useGSAP(() => {
         const start = isMobile ? 'top 20%' : 'top top'
+        // Increase scrub value for iPad/tablet to slow down animation
+        // Higher scrub value = smoother, slower animation
+        const scrubValue = isTablet ? 3 : (isMobile ? 1.5 : 2);
+        // Adjust end point to provide more scroll distance on iPad
+        const endPoint = isTablet ? 'bottom top' : 'bottom center';
 
         const maskTimeLine = gsap.timeline({
             scrollTrigger: {
                 trigger: '#art',
                 start,
-                end: 'bottom center',
-                scrub: 1.5,
+                end: endPoint,
+                scrub: scrubValue,
                 pin: true
             }
         })
 
+        // Increase duration for smoother animation on iPad
+        const fadeDuration = isTablet ? 1.5 : 1;
+        const maskDuration = isTablet ? 1.5 : 1;
+        const contentDuration = isTablet ? 1.5 : 1;
+
         maskTimeLine
             .to('.will-fade', {
-            opacity: 0, stagger: 0.2, ease: 'power1.inOut',
+            opacity: 0, stagger: 0.2, duration: fadeDuration, ease: 'power1.inOut',
         })
             .to('.masked-img', {
-                scale: 1.3, maskPosition:'center', maskSize: '400%', duration: 1, ease:'power1.inOut'
+                scale: 1.3, maskPosition:'center', maskSize: '400%', duration: maskDuration, ease:'power1.inOut'
             })
-            .to('#masked-content', {opacity: 1, duration: 1, ease: 'power1.inOut'})
+            .to('#masked-content', {opacity: 1, duration: contentDuration, ease: 'power1.inOut'})
 
         // Floating animation for left and right images
         gsap.to('.floating-left-img', {
