@@ -11,14 +11,44 @@ const Hero = () => {
     // Generate a version string once to bypass browser cache
     const videoVersion = useMemo(() => `v=${Date.now()}`, []);
 
-    // Force video reload to bypass cache
+    const isMobile = useMediaQuery({ maxWidth: 767 });
+
+    // Force video reload and ensure it's visible on mobile
     useEffect(() => {
         if (videoRef.current) {
             videoRef.current.load();
+            // On mobile, show the first frame immediately and try to play
+            if (isMobile) {
+                const video = videoRef.current;
+                
+                // Set to first frame
+                video.currentTime = 0;
+                
+                // Try to play, but ensure first frame is visible even if autoplay is blocked
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.catch(err => {
+                        console.log('Video autoplay prevented:', err);
+                        // Even if autoplay fails, ensure first frame is visible
+                        video.currentTime = 0;
+                    });
+                }
+                
+                // Ensure video is visible after metadata loads
+                const ensureVisible = () => {
+                    video.currentTime = 0;
+                    video.style.opacity = '1';
+                };
+                
+                if (video.readyState >= 2) {
+                    // Video has frame data
+                    ensureVisible();
+                } else {
+                    video.addEventListener('loadeddata', ensureVisible, { once: true });
+                }
+            }
         }
-    }, []);
-
-    const isMobile = useMediaQuery({ maxWidth: 767 });
+    }, [isMobile]);
 
     useGSAP(() => {
         const heroSplit = new SplitText('.title', { type: 'chars, words' })
@@ -54,11 +84,11 @@ const Hero = () => {
             .to('.right-leaf', { y: 200 }, 0)
             .to('.left-leaf', { y: -200 }, 0)
 
-        const startValue = isMobile ? 'top 50%' : 'center 60%';
+        const startValue = isMobile ? 'top top' : 'center 60%';
         const endValue = isMobile ? '120% top' : 'bottom top';
 
 
-        //video aimation timeline
+        //video animation timeline
 
         const tl = gsap.timeline({
             scrollTrigger: {
@@ -69,14 +99,29 @@ const Hero = () => {
                 pin: true,
             }
         })
-        videoRef.current.onloadedmetadata = () => {
-            tl.to(videoRef.current, {
-                currentTime: videoRef.current.duration
-            })
+        
+        // Ensure video is visible and ready
+        if (videoRef.current) {
+            const handleLoadedMetadata = () => {
+                // On mobile, start from the beginning
+                if (isMobile) {
+                    videoRef.current.currentTime = 0;
+                }
+                tl.to(videoRef.current, {
+                    currentTime: videoRef.current.duration
+                })
+            };
+            
+            if (videoRef.current.readyState >= 1) {
+                // Metadata already loaded
+                handleLoadedMetadata();
+            } else {
+                videoRef.current.onloadedmetadata = handleLoadedMetadata;
+            }
         }
 
 
-    }, [])
+    }, [isMobile])
     return (
         <>
             <section id="hero" className="noisy">
@@ -85,7 +130,7 @@ const Hero = () => {
                 <img src="/images/hero-right-leaf.png" alt="right-leaf" className="right-leaf" />
                 <div className="body">
                     <div className="content">
-                        <div className="space-y-5 mt-20 hidden md:block">
+                        <div className="space-y-5 mt-20 md:block">
                             <p>Elegant. Luxurious. Timeless.</p>
                             <p className="subtitle">
                                 Discover the Essence <br /> of Luxury
@@ -108,6 +153,8 @@ const Hero = () => {
                     muted
                     playsInline
                     preload="auto"
+                    autoPlay={isMobile}
+                    loop={false}
                 />
             </div>
         </>

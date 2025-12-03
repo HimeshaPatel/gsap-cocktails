@@ -90,7 +90,7 @@ body {
         @apply relative z-10 min-h-dvh w-full border border-transparent;
 
         h1 {
-            @apply absolute top-20 sm:top-24 md:top-48 lg:top-32 left-1/2 -translate-x-1/2 text-6xl sm:text-7xl md:text-9xl lg:text-8xl xl:text-9xl xl:text-[15vw] 2xl:text-[20vw] leading-none text-center font-modern-negra px-4 md:px-6 w-full z-10;
+            @apply absolute top-[20%] sm:top-[20%] md:top-48 lg:top-32 left-1/2 -translate-x-1/2 -translate-y-1/2 md:translate-y-0 text-6xl sm:text-7xl md:text-9xl lg:text-8xl xl:text-9xl xl:text-[15vw] 2xl:text-[20vw] leading-none text-center font-modern-negra px-4 md:px-6 w-full z-10;
         }
 
         .left-leaf {
@@ -138,8 +138,22 @@ body {
         }
     }
 
+    .video {
+        @apply w-full h-full absolute inset-0 z-0;
+    }
+
     video {
-        @apply w-full h-full absolute inset-0 object-cover z-0;
+        @apply w-full h-full absolute inset-0 object-cover;
+    }
+
+    @media (max-width: 767px) {
+        .video {
+            @apply block opacity-100;
+        }
+        
+        video {
+            @apply opacity-100;
+        }
     }
 
     #cocktails {
@@ -194,7 +208,7 @@ body {
         @apply min-h-screen py-12 sm:py-14 md:py-16 lg:py-20 xl:py-28 2xl:px-0 px-4 sm:px-5 md:px-6 container mx-auto 2xl:max-w-7xl;
 
         .content {
-            @apply grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 md:gap-8 lg:gap-10 pt-14 sm:pt-16 md:pt-20 lg:pt-32;
+            @apply grid grid-cols-1 lg:grid-cols-12 gap-5 sm:gap-6 md:gap-8 lg:gap-10 pt-8 sm:pt-20 md:pt-20 lg:pt-8;
 
             h2 {
                 @apply text-3xl sm:text-4xl md:text-4xl lg:text-5xl xl:text-6xl font-modern-negra max-w-lg;
@@ -247,7 +261,7 @@ body {
     }
 
     #art {
-        @apply flex-center flex-col min-h-dvh p-4 sm:p-5 md:p-5 lg:p-6 mt-12 sm:mt-14 md:mt-16 lg:mt-20 relative radial-gradient;
+        @apply flex-center flex-col min-h-dvh p-2 sm:p-4 md:p-5 lg:p-6 pt-16 sm:pt-20 md:pt-16 lg:pt-20 mt-8 sm:mt-10 md:mt-16 lg:mt-20 relative radial-gradient pb-16 sm:pb-20 md:pb-0;
 
         .floating-left-img {
             @apply absolute left-0 top-1/2 -translate-y-1/2 w-16 sm:w-20 md:w-24 lg:w-32 xl:w-48 pointer-events-none z-0 opacity-60 md:opacity-70 lg:opacity-80;
@@ -258,24 +272,26 @@ body {
         }
 
         h2 {
-            @apply relative text-6xl sm:text-7xl md:text-9xl lg:text-8xl xl:text-9xl xl:text-[18vw] 2xl:text-[24vw] text-nowrap leading-none font-modern-negra text-center text-[#505050] mb-5 sm:mb-6 md:mb-7 lg:mb-8 px-4;
+            @apply relative text-6xl sm:text-7xl md:text-9xl lg:text-8xl xl:text-9xl xl:text-[18vw] 2xl:text-[24vw] text-nowrap leading-none font-modern-negra text-center text-[#505050] mb-2 sm:mb-4 md:mb-7 lg:mb-8 px-2 sm:px-4;
         }
 
         .content {
-            @apply flex md:flex-row flex-col justify-between md:mb-12 lg:mb-16 md:mt-0 mt-20 sm:mt-28 md:mt-32 lg:mt-40 gap-5 sm:gap-6 md:gap-8 lg:gap-10 w-full px-4 sm:px-5 md:px-6;
+            @apply flex md:flex-row flex-col justify-between md:mb-12 lg:mb-16 md:mt-0 mt-4 sm:mt-8 md:mt-32 lg:mt-40 gap-3 sm:gap-4 md:gap-8 lg:gap-10 w-full px-2 sm:px-4 md:px-6;
         }
 
         .cocktail-img {
-            @apply md:w-[65vw] lg:w-[60vw] w-[90vw] sm:w-[85vw] h-[40vh] sm:h-[45vh] md:h-[55vh] lg:h-[60vh] xl:h-[70vh] rounded-2xl sm:rounded-3xl md:rounded-4xl overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
+            @apply md:w-[65vw] lg:w-[60vw] w-[90vw] sm:w-[85vw] h-[40vh] sm:h-[45vh] md:h-[55vh] lg:h-[60vh] xl:h-[70vh] rounded-2xl sm:rounded-3xl md:rounded-4xl overflow-hidden absolute top-4 sm:top-8 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
         }
 
         .masked-container {
+            @apply relative w-full;
+            
             h2 {
                 @apply text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl font-modern-negra text-center mb-2 sm:mb-3 md:mb-4 lg:mb-5 text-white mt-12 sm:mt-14 md:mt-16 lg:mt-20 px-4;
             }
 
             div {
-                @apply opacity-0 md:px-0 px-4 sm:px-5 space-y-3 sm:space-y-3 md:space-y-4 lg:space-y-5 absolute md:bottom-5 bottom-40 sm:bottom-44 md:bottom-48 lg:bottom-52 left-1/2 -translate-x-1/2 w-full max-w-[90vw] sm:max-w-md md:max-w-none;
+                @apply opacity-0 md:px-0 px-4 sm:px-5 space-y-3 sm:space-y-3 md:space-y-4 lg:space-y-5 relative md:absolute md:bottom-5 md:left-1/2 md:-translate-x-1/2 w-full max-w-[90vw] sm:max-w-md md:max-w-none mb-12 sm:mb-16 md:mb-0;
 
                 h3 {
                     @apply md:text-4xl lg:text-5xl text-xl sm:text-2xl md:text-2xl lg:text-3xl xl:text-4xl text-center font-serif md:w-full w-auto text-white px-4;
@@ -380,7 +396,7 @@ body {
         }
 
         .content {
-            @apply container mx-auto pt-4 sm:pt-6 md:pt-8 lg:pt-12 xl:pt-14 2xl:pt-32 pb-8 sm:pb-10 md:pb-0 lg:pb-16 flex flex-col md:justify-start lg:justify-between justify-between gap-4 sm:gap-5 md:gap-6 lg:gap-10 min-h-dvh relative z-0;
+            @apply container mx-auto pt-0 sm:pt-0 md:pt-8 lg:pt-12 xl:pt-14 2xl:pt-32 pb-8 sm:pb-10 md:pb-0 lg:pb-16 flex flex-col justify-center md:justify-start lg:justify-between gap-4 sm:gap-5 md:gap-6 lg:gap-10 min-h-dvh relative z-0;
 
             h2 {
                 @apply lg:text-4xl xl:text-5xl 2xl:text-6xl text-3xl sm:text-4xl md:text-5xl lg:text-5xl font-modern-negra md:translate-y-0 translate-y-5 px-4 mb-4 sm:mb-5 md:mb-6 lg:mb-0;

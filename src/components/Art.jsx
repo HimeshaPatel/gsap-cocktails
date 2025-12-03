@@ -11,7 +11,7 @@ const Art = () => {
     const isTablet = useMediaQuery({ minWidth: 768, maxWidth: 1024 });
 
     useGSAP(() => {
-        const start = isMobile ? 'top 20%' : 'top top'
+        const start = isMobile ? 'top 30%' : 'top top'
         // Increase scrub value for iPad/tablet to slow down animation
         // Higher scrub value = smoother, slower animation
         const scrubValue = isTablet ? 3 : (isMobile ? 1.5 : 2);
@@ -78,7 +78,7 @@ const Art = () => {
                 className="floating-right-img"
             />
 
-            <div className="container mx-auto h-full pt-20">
+            <div className="container mx-auto h-full pt-2 sm:pt-0 md:pt-20">
                 <h2 className="will-fade z-10">The ART</h2>
 
                 <div className="content">
@@ -111,7 +111,7 @@ const Art = () => {
 
                 <div className="masked-container">
                     <h2 className="will-fade z-10">Scent-Worthy Perfection</h2>
-                    <div id="masked-content" className="mt-20">
+                    <div id="masked-content" className="mt-8 sm:mt-12 md:mt-20">
                         <h3>Made with Craft, Bottled with Passion</h3>
                         <p>This isn't just a fragrance. It's a carefully crafted essence made just for you.</p>
                     </div>
