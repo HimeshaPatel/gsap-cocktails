@@ -1,9 +1,9 @@
 
 import React from "react";
 import gsap from "gsap";
-import {featureLists, goodLists} from "../../constants/index.js";
-import {useMediaQuery} from "react-responsive";
-import {useGSAP} from "@gsap/react";
+import { featureLists, goodLists } from "../../constants/index.js";
+import { useMediaQuery } from "react-responsive";
+import { useGSAP } from "@gsap/react";
 
 const Art = () => {
 
@@ -35,12 +35,12 @@ const Art = () => {
 
         maskTimeLine
             .to('.will-fade', {
-            opacity: 0, stagger: 0.2, duration: fadeDuration, ease: 'power1.inOut',
-        })
-            .to('.masked-img', {
-                scale: 1.3, maskPosition:'center', maskSize: '400%', duration: maskDuration, ease:'power1.inOut'
+                opacity: 0, stagger: 0.2, duration: fadeDuration, ease: 'power1.inOut',
             })
-            .to('#masked-content', {opacity: 1, duration: contentDuration, ease: 'power1.inOut'})
+            .to('.masked-img', {
+                scale: 1.3, maskPosition: 'center', maskSize: '400%', duration: maskDuration, ease: 'power1.inOut'
+            })
+            .to('#masked-content', { opacity: 1, duration: contentDuration, ease: 'power1.inOut' })
 
         // Floating animation for left and right images
         gsap.to('.floating-left-img', {
@@ -65,19 +65,19 @@ const Art = () => {
     return (
         <div id="art">
             {/* Floating left image */}
-            <img 
-                src="/images/art-left.png" 
-                alt="floating left" 
+            <img
+                src="/images/art-left.png"
+                alt="floating left"
                 className="floating-left-img"
             />
-            
+
             {/* Floating right image */}
-            <img 
-                src="/images/art-right.png" 
-                alt="floating right" 
+            <img
+                src="/images/art-right.png"
+                alt="floating right"
                 className="floating-right-img"
             />
-            
+
             <div className="container mx-auto h-full pt-20">
                 <h2 className="will-fade z-10">The ART</h2>
 
@@ -110,8 +110,8 @@ const Art = () => {
                 </div>
 
                 <div className="masked-container">
-                    <h2 className="will-fade">Scent-Worthy Perfection</h2>
-                    <div id="masked-content" className="mt-5">
+                    <h2 className="will-fade z-10">Scent-Worthy Perfection</h2>
+                    <div id="masked-content" className="mt-20">
                         <h3>Made with Craft, Bottled with Passion</h3>
                         <p>This isn't just a fragrance. It's a carefully crafted essence made just for you.</p>
                     </div>
